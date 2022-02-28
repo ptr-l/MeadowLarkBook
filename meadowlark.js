@@ -1,12 +1,8 @@
 const express = require('express')
 const expressHandlebars = require('express-handlebars')
+const fortune = require('./lib/fortune.js')
 
 const app = express()
-const fortunes = [
-    "May bad luck and extreme misfortune haunt your pathetic soul for all eternity.",
-    "This is a weird exercise",
-    "Not sure I like it too much",
-]
 
 // configure Handlebars view engine
 app.engine('handlebars', expressHandlebars.engine({
@@ -20,9 +16,8 @@ const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => res.render('home'))
 
-app.get('/about', (req, res) => {
-    const randomFortune = fortunes[Math.floor(Math.random()*fortunes.length)] 
-    res.render('about', {fortune: randomFortune})}) 
+app.get('/about', (req, res) => { 
+    res.render('about', {fortune: fortune.getFortune})}) 
 
 // custom 404 page
 app.use((req, res) => {
