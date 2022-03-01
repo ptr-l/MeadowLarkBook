@@ -1,0 +1,15 @@
+{{#section 'head'}}
+    <!-- we want Google to ignore this --> 
+    <meta name="robots" content="noindex">
+{{/section}}
+
+<h1>Test</h1>
+<p>Testing scripts/sections</p>
+
+{{#section 'scripts'}}
+    <script>
+        document.querySelector('body')
+        .insertAdjacentHTML('beforeEnd', '<small> scripting works </small>')
+    </script>
+{{#section}}
+

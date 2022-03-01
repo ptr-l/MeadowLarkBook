@@ -9,10 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.2",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.2"
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "eslint": "^8.10.0",
+    "jest": "^27.5.1",
+    "portfinder": "^1.0.28",
+    "puppeteer": "^13.4.0"
   }
 }
